@@ -56,7 +56,7 @@ python file_organizer_python.py
 Double-click `file_organizer_win.bat` or execute:
 
 ```cmd
-organizer.bat
+file_organizer_win.bat
 ```
 
 ## Usage
