@@ -4,7 +4,7 @@ setlocal EnableDelayedExpansion
 chcp 65001 >nul 
 
 
-:: Enable ANSI colors
+:: Terminal colors (ANSI)
 for /f %%a in ('echo prompt $E^| cmd') do set "ESC=%%a"
 
 set "CYAN=%ESC%[96m"
@@ -19,7 +19,6 @@ set "BOLD=%ESC%[1m"
 :: Clear terminal
 cls
 
-:: Header
 echo %CYAN%%BOLD%
                                  
 echo        ███████╗██╗██╗     ███████╗███████╗
@@ -73,6 +72,7 @@ for /f "delims=" %%i in ('dir /b /a-d "%folder%" 2^>nul') do (
     set "extension=%%~xi"
     set "folder_name=Others"
 
+    :: Determine destination folder
     if /i "!extension!"==".jpg" set "folder_name=Photos"
     if /i "!extension!"==".png" set "folder_name=Photos"
     if /i "!extension!"==".jpeg" set "folder_name=Photos"
@@ -85,6 +85,7 @@ for /f "delims=" %%i in ('dir /b /a-d "%folder%" 2^>nul') do (
     if /i "!extension!"==".msi" set "folder_name=Applications"
     if /i "!extension!"==".apk" set "folder_name=Applications"
 
+    :: Create destination folder
     if not exist "%folder%\!folder_name!" (
         mkdir "%folder%\!folder_name!" 2>nul
     )

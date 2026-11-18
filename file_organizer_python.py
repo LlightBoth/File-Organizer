@@ -53,6 +53,7 @@ def organize_files(folder_input):
 
         extension = os.path.splitext(file)[1].lower()
 
+        # Determine destination folder
         if extension in [".jpg", ".png", ".jpeg"]:
             folder_name = "Photos"
         elif extension in [".doc", ".pdf", ".xlsx"]:
@@ -62,6 +63,7 @@ def organize_files(folder_input):
         else:
             folder_name = "Others"
 
+        # Create destination folder
         new_folder = os.path.join(folder_input, folder_name)
         os.makedirs(new_folder, exist_ok=True)
 
@@ -78,6 +80,7 @@ clear_screen()
 display_header()
 
 try:
+    # Input instructions
     print(GRAY + "  [INPUT INSTRUCTIONS]" + RESET)
     print(GRAY + "  Enter the full folder path you want to organize." + RESET)
     print(GRAY + "  Example: C:\\Users\\YourName\\Downloads" + RESET)
@@ -92,6 +95,7 @@ try:
 
     total = organize_files(folder_input)
 
+    # Display summary
     print()
     print(CYAN + "=" * 55 + RESET)
     print(GREEN + BOLD + f"  SUCCESS! {total} files organized." + RESET)
