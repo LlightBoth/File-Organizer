@@ -59,6 +59,13 @@ Double-click `file_organizer_win.bat` or execute:
 file_organizer_win.bat
 ```
 
+### 5. Run the Bash version
+
+```bash
+chmod +x file_organizer_linux.sh
+./file_organizer_linux.sh
+```
+
 ## Usage
 
 1. Run the application.
